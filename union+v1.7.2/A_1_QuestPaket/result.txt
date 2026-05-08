@@ -1,0 +1,155 @@
+
+Entry #2
+Key: INFO_NSCHNEIDER20060321163431
+Line 3888
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060321163431=;;;;;;leckarsch;;;;;;seggnyalás;;;;leckarsch;;萊卡施 ;
+--------------------------------------------------
+
+Entry #3
+Key: INFO_NSCHNEIDER20060419232537
+Line 3889
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060419232537=;;;;;;<edit me>;;;;;;<szerkesztés>;;;;<edit me>;;<編輯我> ;
+--------------------------------------------------
+
+Entry #4
+Key: INFO_NSCHNEIDER20060419232659
+Line 3890
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060419232659=;;;;;;<edit me>;;;;;;<szerkesztés>;;;;<edit me>;;<編輯我> ;
+--------------------------------------------------
+
+Entry #5
+Key: INFO_NSCHNEIDER20060419232659_0
+Line 3891
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060419232659_0=;;;;;;6z893zhhnz;;;;;;6z893zhhnz;;;;6z893zhhnz;;6z893zhhnz ;
+--------------------------------------------------
+
+Entry #6
+Key: INFO_NSCHNEIDER20060419233454
+Line 3893
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060419233454=;;;;;;<edit me>;;;;;;<szerkesztés>;;;;<edit me>;;<編輯我> ;
+--------------------------------------------------
+
+Entry #7
+Key: INFO_NSCHNEIDER20060419234117
+Line 3894
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060419234117=;;;;;;63nuzßb;;;;;;63nuzßb;;;;63nuzЯb;;63nuzßb ;
+--------------------------------------------------
+
+Entry #8
+Key: INFO_NSCHNEIDER20060616143406
+Line 3895
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616143406=;;;;;;Dies ist eine permanente Info.;;;;;;Ez egy állandó infó.;;;;Это постоянная информация.;;這是一個永久信息。 ;
+--------------------------------------------------
+
+Entry #9
+Key: INFO_NSCHNEIDER20060616143406_0
+Line 3896
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616143406_0=;;;;;;Ja, ich merk das schon, du quatscht inzwischen so oft mit mir, das ist schon richtig nervig.;;;;;;Igen, észrevettem, hogy mostanában olyan gyakran beszélsz hozzám, ami már tényleg idegesítő.;;;;Да, я уже заметил это, ты так часто болтаешь со мной, что это меня уже раздражает.;;是的，我意識到，您現在經常和我說話，這真的很煩人。 ;
+--------------------------------------------------
+
+Entry #10
+Key: INFO_NSCHNEIDER20060616144103
+Line 3897
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616144103=;;;;;;Hol mir 3 Bananen!;;;;;;Hozz nekem 3 banánt!;;;;Принеси мне три банана!;;給我3根香蕉！ ;
+--------------------------------------------------
+
+Entry #11
+Key: INFO_NSCHNEIDER20060616144103_0
+Line 3898
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616144103_0=;;;;;;Na, das mach ich doch gern!;;;;;;Nos, ezt örömmel megteszem!;;;;Ну, это я всегда с радостью!;;好吧，我喜歡這樣做！ ;
+--------------------------------------------------
+
+Entry #12
+Key: INFO_NSCHNEIDER20060616144358
+Line 3899
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616144358=;;;;;;Was ist, wo bleiben meine Bananen?;;;;;;Mi van, hol vannak már a banánjaim?;;;;Что это, где остальные бананы?;;我的香蕉是什麼？ ;
+--------------------------------------------------
+
+Entry #13
+Key: INFO_NSCHNEIDER20060616144432
+Line 3900
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616144432=;;;;;;Hier sind alle fehlenden Bananen.;;;;;;Itt van az összes hiányzó banán.;;;;Вот все недостающие бананы.;;所有缺少的香蕉都在這裡。 ;
+--------------------------------------------------
+
+Entry #14
+Key: INFO_NSCHNEIDER20060616144432_0
+Line 3901
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616144432_0=;;;;;;Ah, sehr gut, vielen Dank!;;;;;;Áh, nagyon jó, köszönöm!;;;;Ах, очень хорошо, большое спасибо!;;啊，很好，非常感謝！ ;
+--------------------------------------------------
+
+Entry #15
+Key: INFO_NSCHNEIDER20060616144502
+Line 3902
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616144502=;;;;;;Hier sind schon mal ein paar.;;;;;;Itt van még néhány.;;;;Вот здесь несколько.;;這裡有幾根。 ;
+--------------------------------------------------
+
+Entry #16
+Key: INFO_NSCHNEIDER20060616144502_0
+Line 3903
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616144502_0=;;;;;;Nicht schlecht, vergiss den Rest nicht!;;;;;;Nem rossz, ne felejtsd el a többit!;;;;Неплохо, только не забывай про остаток!;;不錯，別忘了其餘的！ ;
+--------------------------------------------------
+
+Entry #17
+Key: INFO_NSCHNEIDER20060616144553
+Line 3904
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616144553=;;;;;;Na, war ich gut?;;;;;;Nos, jó voltam?;;;;Ну что, я был хорош?;;好吧，我好嗎？ ;
+--------------------------------------------------
+
+Entry #18
+Key: INFO_NSCHNEIDER20060616144553_0
+Line 3905
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616144553_0=;;;;;;Ja, war nicht schlecht, hast mir alle Bananen gebracht, danke sehr!;;;;;;Igen, nem is rossz, elhoztad az összes banánt, köszönöm szépen!;;;;Да, ты был неплох, принес мне все бананы, большое спасибо!;;是的，你很好，給我帶來了所有的香蕉，非常感謝你！ ;
+--------------------------------------------------
+
+Entry #19
+Key: INFO_NSCHNEIDER20060616144746
+Line 3906
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616144746=;;;;;;Lass uns handeln!;;;;;;Üzleteljünk!;;;;Давай торговаться!;;我們做個交易吧！ ;
+--------------------------------------------------
+
+Entry #20
+Key: INFO_NSCHNEIDER20060616151027
+Line 3907
+[!] No English letters before delimiter
+
+INFO_NSCHNEIDER20060616151027=;;;;;;SetTradeEnabled;;;;;;SetTradeEnabled;;;;SetTradeEnabled;;設定交易已啟用 ;
+--------------------------------------------------
+
+
+

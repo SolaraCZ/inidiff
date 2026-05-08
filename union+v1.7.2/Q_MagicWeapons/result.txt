@@ -1,0 +1,932 @@
+======================================================================
+
+Entry #1
+Line 1417
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_DemonicKatana_Flame=;;;;;;;;;;;;;;;;Они;;;
+--------------------------------------------------
+
+Entry #2
+Line 1418
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_DemonicKatana_Flame=;;;;;;;;;;;;;;;;Клинок, рожденный в огне древних легенд и проклятий.;;;
+--------------------------------------------------
+
+Entry #3
+Line 1419
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_BlackGoldKatana_Flame=;;;;;;;;;;;;;;;;Черное золото;;;
+--------------------------------------------------
+
+Entry #4
+Line 1420
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_BlackGoldKatana_Flame=;;;;;;;;;;;;;;;;Редчайшее сокровище среди клинков, окутанное тайной и величием.;;;
+--------------------------------------------------
+
+Entry #5
+Line 1421
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_GardaKatana_Flame=;;;;;;;;;;;;;;;;Катана с гардой;;;
+--------------------------------------------------
+
+Entry #6
+Line 1422
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_GardaKatana_Flame=;;;;;;;;;;;;;;;;Символ мастерства, где каждый элемент продуман до совершенства.;;;
+--------------------------------------------------
+
+Entry #7
+Line 1423
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_GoldKatana_Flame=;;;;;;;;;;;;;;;;Йайто;;;
+--------------------------------------------------
+
+Entry #8
+Line 1424
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_GoldKatana_Flame=;;;;;;;;;;;;;;;;Клинок, пропитанный духом самоотверженности и честности воина.;;;
+--------------------------------------------------
+
+Entry #9
+Line 1425
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_SimpleKatana_Flame=;;;;;;;;;;;;;;;;Улучшенная катана;;;
+--------------------------------------------------
+
+Entry #10
+Line 1426
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_SimpleKatana_Flame=;;;;;;;;;;;;;;;;Её лезвие словно создано самой природой для стремительных и точных ударов.;;;
+--------------------------------------------------
+
+Entry #11
+Line 1427
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_LotosKatana_Flame=;;;;;;;;;;;;;;;;Сакура;;;
+--------------------------------------------------
+
+Entry #12
+Line 1428
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_LotosKatana_Flame=;;;;;;;;;;;;;;;;Нежное и в то же время смертельное острое оружие.;;;
+--------------------------------------------------
+
+Entry #13
+Line 1429
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_MesserKatana_Flame=;;;;;;;;;;;;;;;;Мессер;;;
+--------------------------------------------------
+
+Entry #14
+Line 1430
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_MesserKatana_Flame=;;;;;;;;;;;;;;;;Этот клинок создан для тех, кто ценит силу в чистом виде.;;;
+--------------------------------------------------
+
+Entry #15
+Line 1431
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ClamshellRapier_Flame=;;;;;;;;;;;;;;;;Кардинал;;;
+--------------------------------------------------
+
+Entry #16
+Line 1432
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ClamshellRapier_Flame=;;;;;;;;;;;;;;;;Символ статуса и решимости, дарующий своему владельцу уверенность и власть на поле боя.;;;
+--------------------------------------------------
+
+Entry #17
+Line 1433
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CurvedRapier_Flame=;;;;;;;;;;;;;;;;Изогнутая рапира;;;
+--------------------------------------------------
+
+Entry #18
+Line 1434
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CurvedRapier_Flame=;;;;;;;;;;;;;;;;Изгиб словно повторяет движение мастера, позволяя наносить неожиданные и смертоносные удары с необычной траекторией.;;;
+--------------------------------------------------
+
+Entry #19
+Line 1435
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ElegantRapier_Flame=;;;;;;;;;;;;;;;;Элегантная рапира;;;
+--------------------------------------------------
+
+Entry #20
+Line 1436
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ElegantRapier_Flame=;;;;;;;;;;;;;;;;Гарда украшена изящными узорами, подчеркивающими статус и изысканный вкус владельца;;;
+--------------------------------------------------
+
+Entry #21
+Line 1437
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_JaggedRapier_Flame=;;;;;;;;;;;;;;;;Зазубренная рапира;;;
+--------------------------------------------------
+
+Entry #22
+Line 1438
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_JaggedRapier_Flame=;;;;;;;;;;;;;;;;Этот меч создан для тех, кто ценит преимущество любой ценой.;;;
+--------------------------------------------------
+
+Entry #23
+Line 1439
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_OrderRapier_Flame=;;;;;;;;;;;;;;;;Рапира ордена;;;
+--------------------------------------------------
+
+Entry #24
+Line 1440
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_OrderRapier_Flame=;;;;;;;;;;;;;;;;В руках рыцаря рапира становится оружием света, пронизывающим тьму.;;;
+--------------------------------------------------
+
+Entry #25
+Line 1441
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_SwissSaber_Flame=;;;;;;;;;;;;;;;;Шило;;;
+--------------------------------------------------
+
+Entry #26
+Line 1442
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_SwissSaber_Flame=;;;;;;;;;;;;;;;;Эта рапира не нуждается в силе — её сила в умелом владении и хладнокровии бойца.;;;
+--------------------------------------------------
+
+Entry #27
+Line 1443
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ArabicSaber_Flame=;;;;;;;;;;;;;;;;Восточная сабля;;;
+--------------------------------------------------
+
+Entry #28
+Line 1444
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ArabicSaber_Flame=;;;;;;;;;;;;;;;;Идеал изящества и смертоносной быстроты, рожденный в пылающих пустынях.;;;
+--------------------------------------------------
+
+Entry #29
+Line 1445
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_BigSaber_Flame=;;;;;;;;;;;;;;;;Плаха;;;
+--------------------------------------------------
+
+Entry #30
+Line 1446
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_BigSaber_Flame=;;;;;;;;;;;;;;;;Каждый взмах этой сабли звучит как приговор.;;;
+--------------------------------------------------
+
+Entry #31
+Line 1447
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CurvedSaber_Flame=;;;;;;;;;;;;;;;;Изогнутая сабля;;;
+--------------------------------------------------
+
+Entry #32
+Line 1448
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CurvedSaber_Flame=;;;;;;;;;;;;;;;;Эта сабля словно оживает в руках мастера, сочетая лёгкость и мощь.;;;
+--------------------------------------------------
+
+Entry #33
+Line 1449
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_MamelukeSaber_Flame=;;;;;;;;;;;;;;;;Сабля всадника;;;
+--------------------------------------------------
+
+Entry #34
+Line 1450
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_MamelukeSaber_Flame=;;;;;;;;;;;;;;;;Лезвие легко и плавно режет воздух, позволяя наносить точные, эффективные удары в движении.;;;
+--------------------------------------------------
+
+Entry #35
+Line 1451
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_Scimitar_01_Flame=;;;;;;;;;;;;;;;;Твердоруб;;;
+--------------------------------------------------
+
+Entry #36
+Line 1452
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_Scimitar_01_Flame=;;;;;;;;;;;;;;;;Удары этой сабли пробивают даже самые прочные доспехи.;;;
+--------------------------------------------------
+
+Entry #37
+Line 1453
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CaptainRapier_Flame=;;;;;;;;;;;;;;;;Капитанская рапира;;;
+--------------------------------------------------
+
+Entry #38
+Line 1454
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CaptainRapier_Flame=;;;;;;;;;;;;;;;;Легендарное клинковое оружие, выкованное из закаленной стали.;;;
+--------------------------------------------------
+
+Entry #39
+Line 1456
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_DemonicKatana_Ice=;;;;;;;;;;;;;;;;Они;;;
+--------------------------------------------------
+
+Entry #40
+Line 1457
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_DemonicKatana_Ice=;;;;;;;;;;;;;;;;Клинок, рожденный в огне древних легенд и проклятий.;;;
+--------------------------------------------------
+
+Entry #41
+Line 1458
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_BlackGoldKatana_Ice=;;;;;;;;;;;;;;;;Черное золото;;;
+--------------------------------------------------
+
+Entry #42
+Line 1459
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_BlackGoldKatana_Ice=;;;;;;;;;;;;;;;;Редчайшее сокровище среди клинков, окутанное тайной и величием.;;;
+--------------------------------------------------
+
+Entry #43
+Line 1460
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_GardaKatana_Ice=;;;;;;;;;;;;;;;;Катана с гардой;;;
+--------------------------------------------------
+
+Entry #44
+Line 1461
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_GardaKatana_Ice=;;;;;;;;;;;;;;;;Символ мастерства, где каждый элемент продуман до совершенства.;;;
+--------------------------------------------------
+
+Entry #45
+Line 1462
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_GoldKatana_Ice=;;;;;;;;;;;;;;;;Йайто;;;
+--------------------------------------------------
+
+Entry #46
+Line 1463
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_GoldKatana_Ice=;;;;;;;;;;;;;;;;Клинок, пропитанный духом самоотверженности и честности воина.;;;
+--------------------------------------------------
+
+Entry #47
+Line 1464
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_SimpleKatana_Ice=;;;;;;;;;;;;;;;;Улучшенная катана;;;
+--------------------------------------------------
+
+Entry #48
+Line 1465
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_SimpleKatana_Ice=;;;;;;;;;;;;;;;;Её лезвие словно создано самой природой для стремительных и точных ударов.;;;
+--------------------------------------------------
+
+Entry #49
+Line 1466
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_LotosKatana_Ice=;;;;;;;;;;;;;;;;Сакура;;;
+--------------------------------------------------
+
+Entry #50
+Line 1467
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_LotosKatana_Ice=;;;;;;;;;;;;;;;;Нежное и в то же время смертельное острое оружие.;;;
+--------------------------------------------------
+
+Entry #51
+Line 1468
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_MesserKatana_Ice=;;;;;;;;;;;;;;;;Мессер;;;
+--------------------------------------------------
+
+Entry #52
+Line 1469
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_MesserKatana_Ice=;;;;;;;;;;;;;;;;Этот клинок создан для тех, кто ценит силу в чистом виде.;;;
+--------------------------------------------------
+
+Entry #53
+Line 1470
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ClamshellRapier_Ice=;;;;;;;;;;;;;;;;Кардинал;;;
+--------------------------------------------------
+
+Entry #54
+Line 1471
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ClamshellRapier_Ice=;;;;;;;;;;;;;;;;Символ статуса и решимости, дарующий своему владельцу уверенность и власть на поле боя.;;;
+--------------------------------------------------
+
+Entry #55
+Line 1472
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CurvedRapier_Ice=;;;;;;;;;;;;;;;;Изогнутая рапира;;;
+--------------------------------------------------
+
+Entry #56
+Line 1473
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CurvedRapier_Ice=;;;;;;;;;;;;;;;;Изгиб словно повторяет движение мастера, позволяя наносить неожиданные и смертоносные удары с необычной траекторией.;;;
+--------------------------------------------------
+
+Entry #57
+Line 1474
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ElegantRapier_Ice=;;;;;;;;;;;;;;;;Элегантная рапира;;;
+--------------------------------------------------
+
+Entry #58
+Line 1475
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ElegantRapier_Ice=;;;;;;;;;;;;;;;;Гарда украшена изящными узорами, подчеркивающими статус и изысканный вкус владельца;;;
+--------------------------------------------------
+
+Entry #59
+Line 1476
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_JaggedRapier_Ice=;;;;;;;;;;;;;;;;Зазубренная рапира;;;
+--------------------------------------------------
+
+Entry #60
+Line 1477
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_JaggedRapier_Ice=;;;;;;;;;;;;;;;;Этот меч создан для тех, кто ценит преимущество любой ценой.;;;
+--------------------------------------------------
+
+Entry #61
+Line 1478
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_OrderRapier_Ice=;;;;;;;;;;;;;;;;Рапира ордена;;;
+--------------------------------------------------
+
+Entry #62
+Line 1479
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_OrderRapier_Ice=;;;;;;;;;;;;;;;;В руках рыцаря рапира становится оружием света, пронизывающим тьму.;;;
+--------------------------------------------------
+
+Entry #63
+Line 1480
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_SwissSaber_Ice=;;;;;;;;;;;;;;;;Шило;;;
+--------------------------------------------------
+
+Entry #64
+Line 1481
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_SwissSaber_Ice=;;;;;;;;;;;;;;;;Эта рапира не нуждается в силе — её сила в умелом владении и хладнокровии бойца.;;;
+--------------------------------------------------
+
+Entry #65
+Line 1482
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ArabicSaber_Ice=;;;;;;;;;;;;;;;;Восточная сабля;;;
+--------------------------------------------------
+
+Entry #66
+Line 1483
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ArabicSaber_Ice=;;;;;;;;;;;;;;;;Идеал изящества и смертоносной быстроты, рожденный в пылающих пустынях.;;;
+--------------------------------------------------
+
+Entry #67
+Line 1484
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_BigSaber_Ice=;;;;;;;;;;;;;;;;Плаха;;;
+--------------------------------------------------
+
+Entry #68
+Line 1485
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_BigSaber_Ice=;;;;;;;;;;;;;;;;Каждый взмах этой сабли звучит как приговор.;;;
+--------------------------------------------------
+
+Entry #69
+Line 1486
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CurvedSaber_Ice=;;;;;;;;;;;;;;;;Изогнутая сабля;;;
+--------------------------------------------------
+
+Entry #70
+Line 1487
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CurvedSaber_Ice=;;;;;;;;;;;;;;;;Эта сабля словно оживает в руках мастера, сочетая лёгкость и мощь.;;;
+--------------------------------------------------
+
+Entry #71
+Line 1488
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_MamelukeSaber_Ice=;;;;;;;;;;;;;;;;Сабля всадника;;;
+--------------------------------------------------
+
+Entry #72
+Line 1489
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_MamelukeSaber_Ice=;;;;;;;;;;;;;;;;Лезвие легко и плавно режет воздух, позволяя наносить точные, эффективные удары в движении.;;;
+--------------------------------------------------
+
+Entry #73
+Line 1490
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_Scimitar_01_Ice=;;;;;;;;;;;;;;;;Твердоруб;;;
+--------------------------------------------------
+
+Entry #74
+Line 1491
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_Scimitar_01_Ice=;;;;;;;;;;;;;;;;Удары этой сабли пробивают даже самые прочные доспехи.;;;
+--------------------------------------------------
+
+Entry #75
+Line 1492
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CaptainRapier_Ice=;;;;;;;;;;;;;;;;Капитанская рапира;;;
+--------------------------------------------------
+
+Entry #76
+Line 1493
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CaptainRapier_Ice=;;;;;;;;;;;;;;;;Легендарное клинковое оружие, выкованное из закаленной стали.;;;
+--------------------------------------------------
+
+Entry #77
+Line 1495
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_DemonicKatana_Light=;;;;;;;;;;;;;;;;Они;;;
+--------------------------------------------------
+
+Entry #78
+Line 1496
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_DemonicKatana_Light=;;;;;;;;;;;;;;;;Клинок, рожденный в огне древних легенд и проклятий.;;;
+--------------------------------------------------
+
+Entry #79
+Line 1497
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_BlackGoldKatana_Light=;;;;;;;;;;;;;;;;Черное золото;;;
+--------------------------------------------------
+
+Entry #80
+Line 1498
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_BlackGoldKatana_Light=;;;;;;;;;;;;;;;;Редчайшее сокровище среди клинков, окутанное тайной и величием.;;;
+--------------------------------------------------
+
+Entry #81
+Line 1499
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_GardaKatana_Light=;;;;;;;;;;;;;;;;Катана с гардой;;;
+--------------------------------------------------
+
+Entry #82
+Line 1500
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_GardaKatana_Light=;;;;;;;;;;;;;;;;Символ мастерства, где каждый элемент продуман до совершенства.;;;
+--------------------------------------------------
+
+Entry #83
+Line 1501
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_GoldKatana_Light=;;;;;;;;;;;;;;;;Йайто;;;
+--------------------------------------------------
+
+Entry #84
+Line 1502
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_GoldKatana_Light=;;;;;;;;;;;;;;;;Клинок, пропитанный духом самоотверженности и честности воина.;;;
+--------------------------------------------------
+
+Entry #85
+Line 1503
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_SimpleKatana_Light=;;;;;;;;;;;;;;;;Улучшенная катана;;;
+--------------------------------------------------
+
+Entry #86
+Line 1504
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_SimpleKatana_Light=;;;;;;;;;;;;;;;;Её лезвие словно создано самой природой для стремительных и точных ударов.;;;
+--------------------------------------------------
+
+Entry #87
+Line 1505
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_LotosKatana_Light=;;;;;;;;;;;;;;;;Сакура;;;
+--------------------------------------------------
+
+Entry #88
+Line 1506
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_LotosKatana_Light=;;;;;;;;;;;;;;;;Нежное и в то же время смертельное острое оружие.;;;
+--------------------------------------------------
+
+Entry #89
+Line 1507
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_MesserKatana_Light=;;;;;;;;;;;;;;;;Мессер;;;
+--------------------------------------------------
+
+Entry #90
+Line 1508
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_MesserKatana_Light=;;;;;;;;;;;;;;;;Этот клинок создан для тех, кто ценит силу в чистом виде.;;;
+--------------------------------------------------
+
+Entry #91
+Line 1509
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ClamshellRapier_Light=;;;;;;;;;;;;;;;;Кардинал;;;
+--------------------------------------------------
+
+Entry #92
+Line 1510
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ClamshellRapier_Light=;;;;;;;;;;;;;;;;Символ статуса и решимости, дарующий своему владельцу уверенность и власть на поле боя.;;;
+--------------------------------------------------
+
+Entry #93
+Line 1511
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CurvedRapier_Light=;;;;;;;;;;;;;;;;Изогнутая рапира;;;
+--------------------------------------------------
+
+Entry #94
+Line 1512
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CurvedRapier_Light=;;;;;;;;;;;;;;;;Изгиб словно повторяет движение мастера, позволяя наносить неожиданные и смертоносные удары с необычной траекторией.;;;
+--------------------------------------------------
+
+Entry #95
+Line 1513
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ElegantRapier_Light=;;;;;;;;;;;;;;;;Элегантная рапира;;;
+--------------------------------------------------
+
+Entry #96
+Line 1514
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ElegantRapier_Light=;;;;;;;;;;;;;;;;Гарда украшена изящными узорами, подчеркивающими статус и изысканный вкус владельца;;;
+--------------------------------------------------
+
+Entry #97
+Line 1515
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_JaggedRapier_Light=;;;;;;;;;;;;;;;;Зазубренная рапира;;;
+--------------------------------------------------
+
+Entry #98
+Line 1516
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_JaggedRapier_Light=;;;;;;;;;;;;;;;;Этот меч создан для тех, кто ценит преимущество любой ценой.;;;
+--------------------------------------------------
+
+Entry #99
+Line 1517
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_OrderRapier_Light=;;;;;;;;;;;;;;;;Рапира ордена;;;
+--------------------------------------------------
+
+Entry #100
+Line 1518
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_OrderRapier_Light=;;;;;;;;;;;;;;;;В руках рыцаря рапира становится оружием света, пронизывающим тьму.;;;
+--------------------------------------------------
+
+Entry #101
+Line 1519
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_SwissSaber_Light=;;;;;;;;;;;;;;;;Шило;;;
+--------------------------------------------------
+
+Entry #102
+Line 1520
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_SwissSaber_Light=;;;;;;;;;;;;;;;;Эта рапира не нуждается в силе — её сила в умелом владении и хладнокровии бойца.;;;
+--------------------------------------------------
+
+Entry #103
+Line 1521
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ArabicSaber_Light=;;;;;;;;;;;;;;;;Восточная сабля;;;
+--------------------------------------------------
+
+Entry #104
+Line 1522
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ArabicSaber_Light=;;;;;;;;;;;;;;;;Идеал изящества и смертоносной быстроты, рожденный в пылающих пустынях.;;;
+--------------------------------------------------
+
+Entry #105
+Line 1523
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_BigSaber_Light=;;;;;;;;;;;;;;;;Плаха;;;
+--------------------------------------------------
+
+Entry #106
+Line 1524
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_BigSaber_Light=;;;;;;;;;;;;;;;;Каждый взмах этой сабли звучит как приговор.;;;
+--------------------------------------------------
+
+Entry #107
+Line 1525
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CurvedSaber_Light=;;;;;;;;;;;;;;;;Изогнутая сабля;;;
+--------------------------------------------------
+
+Entry #108
+Line 1526
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CurvedSaber_Light=;;;;;;;;;;;;;;;;Эта сабля словно оживает в руках мастера, сочетая лёгкость и мощь.;;;
+--------------------------------------------------
+
+Entry #109
+Line 1527
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_MamelukeSaber_Light=;;;;;;;;;;;;;;;;Сабля всадника;;;
+--------------------------------------------------
+
+Entry #110
+Line 1528
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_MamelukeSaber_Light=;;;;;;;;;;;;;;;;Лезвие легко и плавно режет воздух, позволяя наносить точные, эффективные удары в движении.;;;
+--------------------------------------------------
+
+Entry #111
+Line 1529
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_Scimitar_01_Light=;;;;;;;;;;;;;;;;Твердоруб;;;
+--------------------------------------------------
+
+Entry #112
+Line 1530
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_Scimitar_01_Light=;;;;;;;;;;;;;;;;Удары этой сабли пробивают даже самые прочные доспехи.;;;
+--------------------------------------------------
+
+Entry #113
+Line 1531
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CaptainRapier_Light=;;;;;;;;;;;;;;;;Капитанская рапира;;;
+--------------------------------------------------
+
+Entry #114
+Line 1532
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CaptainRapier_Light=;;;;;;;;;;;;;;;;Легендарное клинковое оружие, выкованное из закаленной стали.;;;
+--------------------------------------------------
+
+Entry #115
+Line 1534
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_DemonicKatana_DSC_01=;;;;;;;;;;;;;;;;Они;;;
+--------------------------------------------------
+
+Entry #116
+Line 1535
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_BlackGoldKatana_DSC_01=;;;;;;;;;;;;;;;;Черное золото;;;
+--------------------------------------------------
+
+Entry #117
+Line 1536
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_GardaKatana_DSC_01=;;;;;;;;;;;;;;;;Катана с гардой;;;
+--------------------------------------------------
+
+Entry #118
+Line 1537
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_GoldKatana_DSC_01=;;;;;;;;;;;;;;;;Йайто;;;
+--------------------------------------------------
+
+Entry #119
+Line 1538
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_SimpleKatana_DSC_01=;;;;;;;;;;;;;;;;Улучшенная катана;;;
+--------------------------------------------------
+
+Entry #120
+Line 1539
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_LotosKatana_DSC_01=;;;;;;;;;;;;;;;;Сакура;;;
+--------------------------------------------------
+
+Entry #121
+Line 1540
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_MesserKatana_DSC_01=;;;;;;;;;;;;;;;;Мессер;;;
+--------------------------------------------------
+
+Entry #122
+Line 1541
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_ClamshellRapier_DSC_01=;;;;;;;;;;;;;;;;Кардинал;;;
+--------------------------------------------------
+
+Entry #123
+Line 1542
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_CurvedRapier_DSC_01=;;;;;;;;;;;;;;;;Изогнутая рапира;;;
+--------------------------------------------------
+
+Entry #124
+Line 1543
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_ElegantRapier_DSC_01=;;;;;;;;;;;;;;;;Элегантная рапира;;;
+--------------------------------------------------
+
+Entry #125
+Line 1544
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_JaggedRapier_DSC_01=;;;;;;;;;;;;;;;;Зазубренная рапира;;;
+--------------------------------------------------
+
+Entry #126
+Line 1545
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_OrderRapier_DSC_01=;;;;;;;;;;;;;;;;Рапира ордена;;;
+--------------------------------------------------
+
+Entry #127
+Line 1546
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_SwissSaber_DSC_01=;;;;;;;;;;;;;;;;Шило;;;
+--------------------------------------------------
+
+Entry #128
+Line 1547
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_ArabicSaber_DSC_01=;;;;;;;;;;;;;;;;Восточная сабля;;;
+--------------------------------------------------
+
+Entry #129
+Line 1548
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_BigSaber_DSC_01=;;;;;;;;;;;;;;;;Плаха;;;
+--------------------------------------------------
+
+Entry #130
+Line 1549
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_CurvedSaber_DSC_01=;;;;;;;;;;;;;;;;Изогнутая сабля;;;
+--------------------------------------------------
+
+Entry #131
+Line 1550
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_MamelukeSaber_DSC_01=;;;;;;;;;;;;;;;;Сабля всадника;;;
+--------------------------------------------------
+
+Entry #132
+Line 1551
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_Scimitar_01_DSC_01=;;;;;;;;;;;;;;;;Твердоруб;;;
+--------------------------------------------------
+
+Entry #133
+Line 1552
+[!] No English letters before delimiter
+
+INFO_CNQ_Enchant_It_1H_Sword_CaptainRapier_01_DSC_01=;;;;;;;;;;;;;;;;Капитанская рапира;;;
+--------------------------------------------------

@@ -1,0 +1,617 @@
+======================================================================
+
+Entry #1
+Line 2324
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_Ancient=;;;;;;;;;;;;;;;;Древний кинжал;;;
+--------------------------------------------------
+
+Entry #2
+Line 2325
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_Ancient=;;;;;;;;;;;;;;;;Мистическое оружие с загадочной историей.;;;
+--------------------------------------------------
+
+Entry #3
+Line 2326
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_Gold=;;;;;;;;;;;;;;;;Богатый кинжал;;;
+--------------------------------------------------
+
+Entry #4
+Line 2327
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_Gold=;;;;;;;;;;;;;;;;Изящное оружие, сочетающее в себе красоту и силу.;;;
+--------------------------------------------------
+
+Entry #5
+Line 2328
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_Kukri=;;;;;;;;;;;;;;;;Кукри убийцы;;;
+--------------------------------------------------
+
+Entry #6
+Line 2329
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_Kukri=;;;;;;;;;;;;;;;;Тёмное искусство, воплощённое в металле.;;;
+--------------------------------------------------
+
+Entry #7
+Line 2330
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_KukriKiller=;;;;;;;;;;;;;;;;Кукри;;;
+--------------------------------------------------
+
+Entry #8
+Line 2331
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_KukriKiller=;;;;;;;;;;;;;;;;Воплощение смертоносной грации и традиционной мощи.;;;
+--------------------------------------------------
+
+Entry #9
+Line 2332
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_Luxurious=;;;;;;;;;;;;;;;;Кортик;;;
+--------------------------------------------------
+
+Entry #10
+Line 2333
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_Luxurious=;;;;;;;;;;;;;;;;Элегантное оружие, символизирующее статус и утонченность владельца.;;;
+--------------------------------------------------
+
+Entry #11
+Line 2334
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_Orc=;;;;;;;;;;;;;;;;Бритва;;;
+--------------------------------------------------
+
+Entry #12
+Line 2335
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_Orc=;;;;;;;;;;;;;;;;Надежное оружие для охоты, отличающееся острым лезвием и эргономичной рукоятью.;;;
+--------------------------------------------------
+
+Entry #13
+Line 2336
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_Parry=;;;;;;;;;;;;;;;;Дага;;;
+--------------------------------------------------
+
+Entry #14
+Line 2337
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_Parry=;;;;;;;;;;;;;;;;Легкое и маневренное оружие, специально предназначенное для отражения и блокировки ударов противника.;;;
+--------------------------------------------------
+
+Entry #15
+Line 2338
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_Pirate=;;;;;;;;;;;;;;;;Пиратский кинжал;;;
+--------------------------------------------------
+
+Entry #16
+Line 2339
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_Pirate=;;;;;;;;;;;;;;;;Грозное оружие с замысловатой рукоятью, символ власти и свободы морского разбойника.;;;
+--------------------------------------------------
+
+Entry #17
+Line 2340
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_Rlyeh=;;;;;;;;;;;;;;;;Рльех;;;
+--------------------------------------------------
+
+Entry #18
+Line 2341
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_Rlyeh=;;;;;;;;;;;;;;;;Мистическое оружие, воплощающее древние тайны и силу морской бездны.;;;
+--------------------------------------------------
+
+Entry #19
+Line 2342
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_Stilet=;;;;;;;;;;;;;;;;Стилет;;;
+--------------------------------------------------
+
+Entry #20
+Line 2343
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_Stilet=;;;;;;;;;;;;;;;;Тонкий и острый кинжал с игловидным лезвием, предназначенный для быстрых колющих ударов.;;;
+--------------------------------------------------
+
+Entry #21
+Line 2344
+[!] No English letters before delimiter
+
+FO_It_1H_Dagger_Thief=;;;;;;;;;;;;;;;;Кинжал вора;;;
+--------------------------------------------------
+
+Entry #22
+Line 2345
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Dagger_Thief=;;;;;;;;;;;;;;;;Компактное и острое оружие, идеально подходящее для ловких и незаметных действий.;;;
+--------------------------------------------------
+
+Entry #23
+Line 2347
+[!] No English letters before delimiter
+
+FO_It_BarbarianHalberd=;;;;;;;;;;;;;;;;Алебарда варвара;;;
+--------------------------------------------------
+
+Entry #24
+Line 2348
+[!] No English letters before delimiter
+
+ITEMDESC_It_BarbarianHalberd=;;;;;;;;;;;;;;;;Тяжелое и мощное боевое оружие, символизирующее свирепую силу варвара.;;;
+--------------------------------------------------
+
+Entry #25
+Line 2349
+[!] No English letters before delimiter
+
+FO_It_Berdiche_01=;;;;;;;;;;;;;;;;Бердыш;;;
+--------------------------------------------------
+
+Entry #26
+Line 2350
+[!] No English letters before delimiter
+
+ITEMDESC_It_Berdiche_01=;;;;;;;;;;;;;;;;Грозное оружие с изогнутым металлическим лезвием, сочетающим силу топора и точность копья.;;;
+--------------------------------------------------
+
+Entry #27
+Line 2351
+[!] No English letters before delimiter
+
+FO_It_Berdiche_02=;;;;;;;;;;;;;;;;Стальной бердыш;;;
+--------------------------------------------------
+
+Entry #28
+Line 2352
+[!] No English letters before delimiter
+
+ITEMDESC_It_Berdiche_02=;;;;;;;;;;;;;;;;Универсальное боевое средство.;;;
+--------------------------------------------------
+
+Entry #29
+Line 2353
+[!] No English letters before delimiter
+
+FO_It_Glaive_01=;;;;;;;;;;;;;;;;Глефа;;;
+--------------------------------------------------
+
+Entry #30
+Line 2354
+[!] No English letters before delimiter
+
+ITEMDESC_It_Glaive_01=;;;;;;;;;;;;;;;;Изящное древковое оружие с изогнутым лезвием, сочетающее в себе грацию и смертоносную силу.;;;
+--------------------------------------------------
+
+Entry #31
+Line 2355
+[!] No English letters before delimiter
+
+FO_It_Halberd_Simple=;;;;;;;;;;;;;;;;Алебарда;;;
+--------------------------------------------------
+
+Entry #32
+Line 2356
+[!] No English letters before delimiter
+
+ITEMDESC_It_Halberd_Simple=;;;;;;;;;;;;;;;;Царица полей.;;;
+--------------------------------------------------
+
+Entry #33
+Line 2357
+[!] No English letters before delimiter
+
+FO_It_LucerneHammer=;;;;;;;;;;;;;;;;Люцернский молот;;;
+--------------------------------------------------
+
+Entry #34
+Line 2358
+[!] No English letters before delimiter
+
+ITEMDESC_It_LucerneHammer=;;;;;;;;;;;;;;;;Воплощение суровой изобретательности средневекового воина.;;;
+--------------------------------------------------
+
+Entry #35
+Line 2359
+[!] No English letters before delimiter
+
+FO_It_MultiHalberd=;;;;;;;;;;;;;;;;Разрушитель;;;
+--------------------------------------------------
+
+Entry #36
+Line 2360
+[!] No English letters before delimiter
+
+ITEMDESC_It_MultiHalberd=;;;;;;;;;;;;;;;;Могучее оружие, объединяющее колющее копьё, рубящий топор и сокрушающий молот.;;;
+--------------------------------------------------
+
+Entry #37
+Line 2361
+[!] No English letters before delimiter
+
+FO_It_Naginata_01=;;;;;;;;;;;;;;;;Нагината;;;
+--------------------------------------------------
+
+Entry #38
+Line 2362
+[!] No English letters before delimiter
+
+ITEMDESC_It_Naginata_01=;;;;;;;;;;;;;;;;Сочетает в себе лёгкость движений и смертоносную точность удара.;;;
+--------------------------------------------------
+
+Entry #39
+Line 2363
+[!] No English letters before delimiter
+
+FO_It_OrcHalberd_Little=;;;;;;;;;;;;;;;;Грубая алебарда;;;
+--------------------------------------------------
+
+Entry #40
+Line 2364
+[!] No English letters before delimiter
+
+ITEMDESC_It_OrcHalberd_Little=;;;;;;;;;;;;;;;;Оружие с массивным, почти угловатым лезвием, словно выкованное из самой тяжести и мощи.;;;
+--------------------------------------------------
+
+Entry #41
+Line 2366
+[!] No English letters before delimiter
+
+FO_It_IronScythe=;;;;;;;;;;;;;;;;Стальная коса;;;
+--------------------------------------------------
+
+Entry #42
+Line 2367
+[!] No English letters before delimiter
+
+ITEMDESC_It_IronScythe=;;;;;;;;;;;;;;;;Воплощение неумолимой смерти и мрачной грации.;;;
+--------------------------------------------------
+
+Entry #43
+Line 2368
+[!] No English letters before delimiter
+
+FO_It_UndeadScythe=;;;;;;;;;;;;;;;;Коса жнеца;;;
+--------------------------------------------------
+
+Entry #44
+Line 2369
+[!] No English letters before delimiter
+
+ITEMDESC_It_UndeadScythe=;;;;;;;;;;;;;;;;Оружие окутанное мраком и таинственной силой безвозвратной жатвы.;;;
+--------------------------------------------------
+
+Entry #45
+Line 2371
+[!] No English letters before delimiter
+
+FO_It_AncientSpear=;;;;;;;;;;;;;;;;Энлиль;;;
+--------------------------------------------------
+
+Entry #46
+Line 2372
+[!] No English letters before delimiter
+
+ITEMDESC_It_AncientSpear=;;;;;;;;;;;;;;;;Символ неизменной решимости и свирепую точность.;;;
+--------------------------------------------------
+
+Entry #47
+Line 2373
+[!] No English letters before delimiter
+
+FO_It_GoldSpear=;;;;;;;;;;;;;;;;Златоклюв;;;
+--------------------------------------------------
+
+Entry #48
+Line 2374
+[!] No English letters before delimiter
+
+ITEMDESC_It_GoldSpear=;;;;;;;;;;;;;;;;Копье с блестящим золотым наконечником, словно солнечный луч, пронзающий тьму.;;;
+--------------------------------------------------
+
+Entry #49
+Line 2375
+[!] No English letters before delimiter
+
+FO_It_Trident=;;;;;;;;;;;;;;;;Трезубец;;;
+--------------------------------------------------
+
+Entry #50
+Line 2376
+[!] No English letters before delimiter
+
+ITEMDESC_It_Trident=;;;;;;;;;;;;;;;;Величественное и благородное оружие, символизирующее незримую власть и силу моря;;;
+--------------------------------------------------
+
+Entry #51
+Line 2378
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_DemonicKatana=;;;;;;;;;;;;;;;;Они;;;
+--------------------------------------------------
+
+Entry #52
+Line 2379
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_DemonicKatana=;;;;;;;;;;;;;;;;Клинок, рожденный в огне древних легенд и проклятий.;;;
+--------------------------------------------------
+
+Entry #53
+Line 2380
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_BlackGoldKatana=;;;;;;;;;;;;;;;;Черное золото;;;
+--------------------------------------------------
+
+Entry #54
+Line 2381
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_BlackGoldKatana=;;;;;;;;;;;;;;;;Редчайшее сокровище среди клинков, окутанное тайной и величием.;;;
+--------------------------------------------------
+
+Entry #55
+Line 2382
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_GardaKatana=;;;;;;;;;;;;;;;;Катана с гардой;;;
+--------------------------------------------------
+
+Entry #56
+Line 2383
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_GardaKatana=;;;;;;;;;;;;;;;;Символ мастерства, где каждый элемент продуман до совершенства.;;;
+--------------------------------------------------
+
+Entry #57
+Line 2384
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_GoldKatana=;;;;;;;;;;;;;;;;Йайто;;;
+--------------------------------------------------
+
+Entry #58
+Line 2385
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_GoldKatana=;;;;;;;;;;;;;;;;Клинок, пропитанный духом самоотверженности и честности воина.;;;
+--------------------------------------------------
+
+Entry #59
+Line 2386
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_SimpleKatana=;;;;;;;;;;;;;;;;Улучшенная катана;;;
+--------------------------------------------------
+
+Entry #60
+Line 2387
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_SimpleKatana=;;;;;;;;;;;;;;;;Её лезвие словно создано самой природой для стремительных и точных ударов.;;;
+--------------------------------------------------
+
+Entry #61
+Line 2388
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_LotosKatana=;;;;;;;;;;;;;;;;Сакура;;;
+--------------------------------------------------
+
+Entry #62
+Line 2389
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_LotosKatana=;;;;;;;;;;;;;;;;Нежное и в то же время смертельное острое оружие.;;;
+--------------------------------------------------
+
+Entry #63
+Line 2390
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_MesserKatana=;;;;;;;;;;;;;;;;Мессер;;;
+--------------------------------------------------
+
+Entry #64
+Line 2391
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_MesserKatana=;;;;;;;;;;;;;;;;Этот клинок создан для тех, кто ценит силу в чистом виде.;;;
+--------------------------------------------------
+
+Entry #65
+Line 2393
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ClamshellRapier=;;;;;;;;;;;;;;;;Кардинал;;;
+--------------------------------------------------
+
+Entry #66
+Line 2394
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ClamshellRapier=;;;;;;;;;;;;;;;;Символ статуса и решимости, дарующий своему владельцу уверенность и власть на поле боя.;;;
+--------------------------------------------------
+
+Entry #67
+Line 2395
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CurvedRapier=;;;;;;;;;;;;;;;;Изогнутая рапира;;;
+--------------------------------------------------
+
+Entry #68
+Line 2396
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CurvedRapier=;;;;;;;;;;;;;;;;Изгиб словно повторяет движение мастера, позволяя наносить неожиданные и смертоносные удары с необычной траекторией.;;;
+--------------------------------------------------
+
+Entry #69
+Line 2397
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ElegantRapier=;;;;;;;;;;;;;;;;Элегантная рапира;;;
+--------------------------------------------------
+
+Entry #70
+Line 2398
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ElegantRapier=;;;;;;;;;;;;;;;;Гарда украшена изящными узорами, подчеркивающими статус и изысканный вкус владельца;;;
+--------------------------------------------------
+
+Entry #71
+Line 2399
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_JaggedRapier=;;;;;;;;;;;;;;;;Зазубренная рапира;;;
+--------------------------------------------------
+
+Entry #72
+Line 2400
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_JaggedRapier=;;;;;;;;;;;;;;;;Этот меч создан для тех, кто ценит преимущество любой ценой.;;;
+--------------------------------------------------
+
+Entry #73
+Line 2401
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_OrderRapier=;;;;;;;;;;;;;;;;Рапира ордена;;;
+--------------------------------------------------
+
+Entry #74
+Line 2402
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_OrderRapier=;;;;;;;;;;;;;;;;В руках рыцаря рапира становится оружием света, пронизывающим тьму.;;;
+--------------------------------------------------
+
+Entry #75
+Line 2403
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_SwissSaber=;;;;;;;;;;;;;;;;Шило;;;
+--------------------------------------------------
+
+Entry #76
+Line 2404
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_SwissSaber=;;;;;;;;;;;;;;;;Эта рапира не нуждается в силе — её сила в умелом владении и хладнокровии бойца.;;;
+--------------------------------------------------
+
+Entry #77
+Line 2405
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CaptainRapier=;;;;;;;;;;;;;;;;Капитанская рапира;;;
+--------------------------------------------------
+
+Entry #78
+Line 2406
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CaptainRapier=;;;;;;;;;;;;;;;;Легендарное клинковое оружие, выкованное из закаленной стали.;;;
+--------------------------------------------------
+
+Entry #79
+Line 2408
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_ArabicSaber=;;;;;;;;;;;;;;;;Восточная сабля;;;
+--------------------------------------------------
+
+Entry #80
+Line 2409
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_ArabicSaber=;;;;;;;;;;;;;;;;Идеал изящества и смертоносной быстроты, рожденный в пылающих пустынях.;;;
+--------------------------------------------------
+
+Entry #81
+Line 2410
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_BigSaber=;;;;;;;;;;;;;;;;Плаха;;;
+--------------------------------------------------
+
+Entry #82
+Line 2411
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_BigSaber=;;;;;;;;;;;;;;;;Каждый взмах этой сабли звучит как приговор.;;;
+--------------------------------------------------
+
+Entry #83
+Line 2412
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_CurvedSaber=;;;;;;;;;;;;;;;;Изогнутая сабля;;;
+--------------------------------------------------
+
+Entry #84
+Line 2413
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_CurvedSaber=;;;;;;;;;;;;;;;;Эта сабля словно оживает в руках мастера, сочетая лёгкость и мощь.;;;
+--------------------------------------------------
+
+Entry #85
+Line 2414
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_MamelukeSaber=;;;;;;;;;;;;;;;;Сабля всадника;;;
+--------------------------------------------------
+
+Entry #86
+Line 2415
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_MamelukeSaber=;;;;;;;;;;;;;;;;Лезвие легко и плавно режет воздух, позволяя наносить точные, эффективные удары в движении.;;;
+--------------------------------------------------
+
+Entry #87
+Line 2416
+[!] No English letters before delimiter
+
+FO_It_1H_Sword_Scimitar_01=;;;;;;;;;;;;;;;;Твердоруб;;;
+--------------------------------------------------
+
+Entry #88
+Line 2417
+[!] No English letters before delimiter
+
+ITEMDESC_It_1H_Sword_Scimitar_01=;;;;;;;;;;;;;;;;Удары этой сабли пробивают даже самые прочные доспехи.;;;
+--------------------------------------------------

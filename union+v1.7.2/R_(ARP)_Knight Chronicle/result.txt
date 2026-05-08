@@ -1,0 +1,7 @@
+Entry #1
+Key: INFO_ARP_Knight_Varant_20_NPC_05
+Line 812
+[!] No English letters before delimiter
+
+INFO_ARP_Knight_Varant_20_NPC_05=Я побуду еще какое-то время в Мора-Сул. Теперь у меня полно денег и я собираюсь хорошенько отдохнуть, аха-ха-ха!;;;;;;[GER];;;;;;;;Zostanę w Mora-Sul jeszcze trochę. Teraz mam mnóstwo pieniędzy i zamierzam dobrze wypocząć, haha!;;Я побуду еще какое-то время в Мора-Сул. Теперь у меня полно денег и я собираюсь хорошенько отдохнуть, аха-ха-ха!;;;
+--------------------------------------------------

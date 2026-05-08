@@ -1,0 +1,17 @@
+======================================================================
+
+Entry #1
+Key: ITEMDESC_It_Perk_Leadership_1
+Line 71
+[!] No English letters before delimiter
+
+ITEMDESC_It_Perk_Leadership_1=;;;;;;Ermöglicht es 2 Begleiter in die Gruppe aufzunehmen.;;;;;;A hős két társat vehet fel a csoportjába.;;Umożliwia zabranie dwóch towarzyszy do grupy.;;Герой может взять в группу двух спутников.;;允许两名同伴加入该小组。;
+--------------------------------------------------
+
+Entry #2
+Key: ITEMDESC_It_Perk_Leadership_2
+Line 72
+[!] No English letters before delimiter
+
+ITEMDESC_It_Perk_Leadership_2=;;;;;;Ermöglicht es 3 Begleiter in die Gruppe aufzunehmen.;;;;;;A hős három társat vehet fel a csoportjába.;;Umożliwia zabranie trzech towarzyszy do grupy.;;Герой может взять в группу трёх спутников.;;允许三名同伴加入该小组。;
+--------------------------------------------------
