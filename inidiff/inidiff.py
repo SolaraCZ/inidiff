@@ -3,8 +3,6 @@ from tkinter import filedialog, messagebox, scrolledtext, ttk
 from tkinterdnd2 import TkinterDnD, DND_FILES
 import re
 
-# Hi Romča, I love you :)
-
 def analyze_language(text):
     """
     Checks if there are ANY letters (A-Z) before the first ';;;;;;' delimiter.

@@ -2,9 +2,6 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox, scrolledtext
 import os
 
-# Hi Romča, I love you :) 
-# Version 7.3: Fixed the "one file only" bug. 
-# Now groups files by name (handles duplicates) and shows correct counts.
 
 def get_keys(file_path):
     """Parses an INI file and returns a dictionary of keys."""
