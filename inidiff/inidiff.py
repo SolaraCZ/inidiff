@@ -1,54 +1,145 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext, ttk
-from tkinterdnd2 import TkinterDnD, DND_FILES
+import os
+import importlib
 import re
+
+try:
+    tkinterdnd2 = importlib.import_module('tkinterdnd2')
+    TkinterDnD = tkinterdnd2.TkinterDnD
+    DND_FILES = tkinterdnd2.DND_FILES
+except ImportError:
+    TkinterDnD = None
+    DND_FILES = None
 
 def analyze_language(text):
     """
-    Checks if there are ANY letters (A-Z) before the first ';;;;;;' delimiter.
+    Checks value content after '=' for the scan tab.
+
+    Fails the check if value contains:
+    - ';;'
+    - '[en]' or '[eng]'
+    - standalone token 'en' or 'eng'
+
+    Otherwise passes if any alphabetic letters are present.
     Returns: (is_english, reason)
     """
     if '=' not in text:
         return False, "No value found"
-    
+
     value = text.split('=', 1)[1]
+    value_stripped = value.strip()
+    leading_value = value.lstrip().lower()
+
+    if leading_value.startswith(';'):
+        return False, "Starts with ';' after '='"
     
-    # Split by multi-language delimiter and get ONLY the first segment
-    segments = value.split(';;;;;;')
-    first_segment = segments[0].strip() if segments else value
-    
-    # Check if there are ANY alphabetic letters (a-z or A-Z) in the first segment
-    has_letters = bool(re.search(r'[a-zA-Z]', first_segment))
-    
-    if has_letters:
-        return True, "Contains letters in English segment"
-    else:
-        if len(first_segment) == 0:
-            return False, "Empty English segment"
-        else:
-            return False, "No letters in English segment"
+    if leading_value.startswith(';;'):
+        return False, "Starts with ';;' after '='"
+
+    if leading_value.startswith('[en]') or leading_value.startswith('[eng]'):
+        return False, "Starts with [en] or [eng] marker"
+
+    if re.match(r'^(?:en|eng)\b', leading_value):
+        return False, "Starts with token 'en' or 'eng'"
+
+    if re.search(r'[a-zA-Z]', value_stripped):
+        return True, "Passes English check"
+
+    if len(value_stripped) == 0:
+        return False, "Empty value"
+
+    return False, "No alphabetic letters found"
 
 def get_keys(file_path):
-    encodings = ['utf-16', 'utf-8-sig', 'utf-8', 'cp1252']
+    encodings = ['utf-16', 'utf-8-sig', 'utf-8', 'cp1250', 'cp1252']
     found_keys = {}
+
+    if not os.path.exists(file_path):
+        return None
     
     for enc in encodings:
         try:
             with open(file_path, 'rb') as f:
                 content = f.read().decode(enc)
                 for line_num, line in enumerate(content.splitlines(), 1):
-                    # Skip empty lines or comments
-                    if not line.strip() or line.strip().startswith('#') or line.strip().startswith(';'):
+                    stripped_line = line.strip()
+
+                    # Skip empty lines, comments, and section headers
+                    if not stripped_line or stripped_line.startswith('#') or stripped_line.startswith(';') or stripped_line.startswith('['):
                         continue
                         
-                    if '=' in line:
-                        key = line.split('=')[0].strip()
+                    if '=' in stripped_line:
+                        key, value = stripped_line.split('=', 1)
+                        key = key.strip()
+                        value = value.strip()
                         if key:
-                            found_keys[key] = {"text": line.strip(), "line": line_num}
+                            key_id = key.lower()
+                            found_keys[key_id] = {
+                                "text": stripped_line,
+                                "value": value,
+                                "line": line_num,
+                                "display_key": key,
+                            }
                 return found_keys
         except:
             continue
     return {}
+
+def count_lines(file_path):
+    encodings = ['utf-16', 'utf-8-sig', 'utf-8', 'cp1250', 'cp1252']
+
+    if not os.path.exists(file_path):
+        return None
+
+    for enc in encodings:
+        try:
+            with open(file_path, 'rb') as f:
+                content = f.read().decode(enc)
+                return len(content.splitlines())
+        except:
+            continue
+
+    return None
+
+def get_compare_lines(file_path):
+    encodings = ['utf-16', 'utf-8-sig', 'utf-8', 'cp1250', 'cp1252']
+
+    if not os.path.exists(file_path):
+        return None
+
+    for enc in encodings:
+        try:
+            with open(file_path, 'rb') as f:
+                content = f.read().decode(enc)
+                lines = []
+                for line_num, line in enumerate(content.splitlines(), 1):
+                    stripped_line = line.strip()
+                    if not stripped_line or stripped_line.startswith('#') or stripped_line.startswith(';') or stripped_line.startswith('['):
+                        continue
+
+                    if '=' not in stripped_line:
+                        continue
+
+                    key_text, value_text = stripped_line.split('=', 1)
+                    key_text = key_text.strip()
+                    value_text = value_text.strip()
+                    if not key_text:
+                        continue
+
+                    lines.append({
+                        "line": line_num,
+                        "text": stripped_line,
+                        "key": key_text,
+                        "key_norm": key_text.lower(),
+                        "value": value_text,
+                    })
+
+                return lines
+        except:
+            continue
+
+    return []
 
 # ============================================
 # TAB 1: FILE COMPARATOR
@@ -58,7 +149,7 @@ class CompareTab(ttk.Frame):
         super().__init__(parent)
         
         tk.Label(self, text="Compare Two Files", font=("Arial", 14, "bold")).pack(pady=10)
-        tk.Label(self, text="Find new keys in File B that don't exist in File A", 
+        tk.Label(self, text="File A is the translation file. Compare it against File B.", 
                  font=("Arial", 9), fg="gray").pack(pady=5)
 
         # --- File A Section ---
@@ -69,11 +160,17 @@ class CompareTab(ttk.Frame):
         self.entry_a.pack(side="left", fill="x", expand=True, padx=(0, 5))
         tk.Button(frame_a, text="Browse", command=lambda: self.browse(self.entry_a)).pack(side="right")
         
-        # Enable Drag & Drop for Entry A
-        self.entry_a.drop_target_register(DND_FILES)
-        self.entry_a.dnd_bind('<<Drop>>', lambda e: self.on_drop(e, self.entry_a))
-        self.entry_a.dnd_bind('<<DragEnter>>', lambda e: self.on_drag_enter(e, self.entry_a))
-        self.entry_a.dnd_bind('<<DragLeave>>', lambda e: self.on_drag_leave(e, self.entry_a))
+        # Enable Drag & Drop for Entry A when available
+        if DND_FILES is not None:
+            self.entry_a.drop_target_register(DND_FILES)
+            self.entry_a.dnd_bind('<<Drop>>', lambda e: self.on_drop(e, self.entry_a))
+            self.entry_a.dnd_bind('<<DragEnter>>', lambda e: self.on_drag_enter(e, self.entry_a))
+            self.entry_a.dnd_bind('<<DragLeave>>', lambda e: self.on_drag_leave(e, self.entry_a))
+
+        # Option to scan the translation (File A) for English content
+        self.scan_translation_var = tk.BooleanVar(value=False)
+        tk.Checkbutton(self, text="Run English-check on translation (File A)",
+                       variable=self.scan_translation_var).pack(anchor="w", padx=20, pady=(0,5))
 
         # --- File B Section ---
         tk.Label(self, text="File B (New File):", font=("Arial", 10, "bold")).pack(anchor="w", padx=20, pady=(10, 0))
@@ -83,11 +180,12 @@ class CompareTab(ttk.Frame):
         self.entry_b.pack(side="left", fill="x", expand=True, padx=(0, 5))
         tk.Button(frame_b, text="Browse", command=lambda: self.browse(self.entry_b)).pack(side="right")
         
-        # Enable Drag & Drop for Entry B
-        self.entry_b.drop_target_register(DND_FILES)
-        self.entry_b.dnd_bind('<<Drop>>', lambda e: self.on_drop(e, self.entry_b))
-        self.entry_b.dnd_bind('<<DragEnter>>', lambda e: self.on_drag_enter(e, self.entry_b))
-        self.entry_b.dnd_bind('<<DragLeave>>', lambda e: self.on_drag_leave(e, self.entry_b))
+        # Enable Drag & Drop for Entry B when available
+        if DND_FILES is not None:
+            self.entry_b.drop_target_register(DND_FILES)
+            self.entry_b.dnd_bind('<<Drop>>', lambda e: self.on_drop(e, self.entry_b))
+            self.entry_b.dnd_bind('<<DragEnter>>', lambda e: self.on_drag_enter(e, self.entry_b))
+            self.entry_b.dnd_bind('<<DragLeave>>', lambda e: self.on_drag_leave(e, self.entry_b))
 
         # --- Compare Button ---
         self.compare_btn = tk.Button(self, text="COMPARE FILES", command=self.compare, 
@@ -95,9 +193,38 @@ class CompareTab(ttk.Frame):
         self.compare_btn.pack(pady=20, fill="x", padx=100)
 
         # --- Results Area ---
-        tk.Label(self, text="Differences Found in File B:", font=("Arial", 10)).pack(anchor="w", padx=20)
-        self.result_area = scrolledtext.ScrolledText(self, width=80, height=15, font=("Consolas", 10))
+        tk.Label(self, text="Scan results:", font=("Arial", 10)).pack(anchor="w", padx=20)
+        self.result_area = scrolledtext.ScrolledText(
+            self,
+            width=80,
+            height=15,
+            font=("Consolas", 10),
+            background="#f8fafc",
+            foreground="#0f172a",
+            insertbackground="#0f172a",
+            borderwidth=1,
+            relief="solid",
+            wrap="none",
+        )
         self.result_area.pack(pady=5, padx=20, fill="both", expand=True)
+
+        self.result_area.tag_config("title", foreground="#0f172a", font=("Arial", 12, "bold"))
+        self.result_area.tag_config("subtitle", foreground="#475569", font=("Arial", 9, "bold"))
+        self.result_area.tag_config("section", foreground="white", background="#1d4ed8", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("summary_label", foreground="#64748b", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("summary_value", foreground="#0f172a", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("legend_a", foreground="#b91c1c", background="#fee2e2", font=("Consolas", 9, "bold"))
+        self.result_area.tag_config("legend_b", foreground="#166534", background="#dcfce7", font=("Consolas", 9, "bold"))
+        self.result_area.tag_config("legend_note", foreground="#475569", font=("Consolas", 9))
+        self.result_area.tag_config("block_replace", foreground="#7c2d12", background="#ffedd5", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("block_insert", foreground="#14532d", background="#dcfce7", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("block_delete", foreground="#7f1d1d", background="#fee2e2", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("line_num_a", foreground="#b91c1c", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("line_num_b", foreground="#166534", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("line_text", foreground="#0f172a")
+        self.result_area.tag_config("separator", foreground="#cbd5e1")
+        self.result_area.tag_config("ok", foreground="#166534", background="#dcfce7", font=("Consolas", 9, "bold"))
+        self.result_area.tag_config("warn", foreground="#7f1d1d", background="#fee2e2", font=("Consolas", 9, "bold"))
 
     def browse(self, entry_widget):
         filename = filedialog.askopenfilename()
@@ -122,6 +249,9 @@ class CompareTab(ttk.Frame):
         """Reset background when drag leaves the entry"""
         entry_widget.config(bg="white")
 
+    def write_line(self, text="", *tags):
+        self.result_area.insert(tk.END, text + "\n", tags)
+
     def compare(self):
         path_a = self.entry_a.get()
         path_b = self.entry_b.get()
@@ -130,59 +260,87 @@ class CompareTab(ttk.Frame):
             messagebox.showwarning("Input Error", "Please select both files before comparing.")
             return
 
-        dict_a = get_keys(path_a)
-        dict_b = get_keys(path_b)
-        new_keys = [k for k in dict_b if k not in dict_a]
+        lines_a = get_compare_lines(path_a)
+        lines_b = get_compare_lines(path_b)
+        line_count_a = count_lines(path_a)
+        line_count_b = count_lines(path_b)
+
+        if lines_a is None or lines_b is None:
+            messagebox.showwarning("Input Error", "One or both file paths do not exist.")
+            return
+
+        keys_a = {item["key_norm"] for item in lines_a}
+        keys_b = {item["key_norm"] for item in lines_b}
+
+        missing_in_translation = sorted(keys_b - keys_a)
+        extra_in_translation = sorted(keys_a - keys_b)
+        translation_lines = {item["key_norm"]: item for item in lines_a}
+        source_lines = {item["key_norm"]: item for item in lines_b}
 
         self.result_area.delete(1.0, tk.END)
-        
-        # --- Language Analysis ---
-        no_english_keys = []
-        english_keys = []
-        
-        for k in new_keys:
-            is_eng, reason = analyze_language(dict_b[k]["text"])
-            if is_eng:
-                english_keys.append(k)
-            else:
-                no_english_keys.append((k, reason))
-        
-        no_english_count = len(no_english_keys)
-        has_english_count = len(english_keys)
-        lang_status = f"{has_english_count} English, {no_english_count} Non-English"
 
-        # --- Header Output ---
-        header = f"SUMMARY:\n"
-        header += f"  - File A unique IDs: {len(dict_a)}\n"
-        header += f"  - File B unique IDs: {len(dict_b)}\n"
-        header += f"  - New entries found: {len(new_keys)}\n"
-        header += f"  - Language Check:  {lang_status}\n"
-            
-        header += "=" * 70 + "\n\n"
-        self.result_area.insert(tk.END, header)
+        self.write_line("SUMMARY", "section")
+        self.write_line(f"Lines in File A: {line_count_a if line_count_a is not None else 'unknown'}", "summary_label")
+        self.write_line(f"Comparable keys in File A: {len(lines_a)}", "summary_value")
+        self.write_line(f"Lines in File B: {line_count_b if line_count_b is not None else 'unknown'}", "summary_label")
+        self.write_line(f"Comparable keys in File B: {len(lines_b)}", "summary_value")
+        self.write_line(f"Keys missing from translation: {len(missing_in_translation)}", "summary_value")
+        self.write_line(f"Keys extra in translation: {len(extra_in_translation)}", "summary_value")
+        self.write_line("")
+        self.write_line("LEGEND", "section")
+        self.write_line("Missing = keys that exist in File B but not in File A", "legend_b")
+        self.write_line("Extra = keys that exist in File A but not in File B", "legend_a")
+        self.write_line("Headers, empty lines, comments, values, and key order are ignored.", "legend_note")
+        self.write_line("")
 
-        if not new_keys:
-            self.result_area.insert(tk.END, ">>> No differences found. File B contains no new keys.")
+        if not missing_in_translation and not extra_in_translation:
+            self.write_line("No differences found after comparing only the text before '='.", "summary_value")
         else:
-            for i, k in enumerate(new_keys, 1):
-                line_info = dict_b[k]
-                is_eng, reason = analyze_language(line_info['text'])
-                
-                entry_text = f"Entry #{i}\n"
-                entry_text += f"Line {line_info['line']}\n"
-                
-                # No warning banner shown anymore
+            self.write_line("MISSING KEYS", "section")
+            if missing_in_translation:
+                for index, key_norm in enumerate(missing_in_translation, 1):
+                    source_item = source_lines[key_norm]
+                    self.write_line(f"{index}. File B line {source_item['line']}: {source_item['key']}", "line_num_b")
+            else:
+                self.write_line("None", "summary_value")
+
+            self.write_line("")
+            self.write_line("EXTRA KEYS", "section")
+            if extra_in_translation:
+                for index, key_norm in enumerate(extra_in_translation, 1):
+                    item = translation_lines[key_norm]
+                    self.write_line(f"{index}. File A line {item['line']}: {item['key']}", "line_num_a")
+            else:
+                self.write_line("None", "summary_value")
+
+        # If enabled, run the English-check on the translation (File A) and include results
+        if getattr(self, 'scan_translation_var', None) and self.scan_translation_var.get():
+            trans_ok = []
+            trans_fail = []
+            for k, info in translation_lines.items():
+                is_eng, reason = analyze_language(info['text'])
                 if is_eng:
-                    entry_text += f"[OK] English detected\n"
+                    trans_ok.append((k, info, reason))
                 else:
-                    entry_text += f"[!] No English letters before delimiter\n"
-                
-                entry_text += f"\n{line_info['text']}\n"
-                entry_text += "-" * 50 + "\n\n"
-                
-                self.result_area.insert(tk.END, entry_text)
-            
-            self.result_area.yview_moveto(0)
+                    trans_fail.append((k, info, reason))
+
+            self.write_line("")
+            self.write_line("TRANSLATION ENGLISH CHECK", "section")
+            self.write_line(f"Total entries scanned: {len(translation_lines)}", "summary_label")
+            self.write_line(f"Passes English check: {len(trans_ok)}", "ok")
+            self.write_line(f"Fails English check: {len(trans_fail)}", "warn")
+            self.write_line("")
+
+            if trans_fail:
+                for i, (k, info, reason) in enumerate(trans_fail, 1):
+                    self.write_line(f"{i}. File A line {info['line']}: {info['key']}", "line_num_a")
+                    self.write_line(f"[!] Fails English check: {reason}", "warn")
+                    self.write_line(info['text'], "line_text")
+                    self.write_line("-" * 70, "separator")
+            else:
+                self.write_line("No failing entries found.", "summary_value")
+
+        self.result_area.yview_moveto(0)
 
 # ============================================
 # TAB 2: LANGUAGE SCANNER
@@ -203,29 +361,45 @@ class ScanTab(ttk.Frame):
         self.entry_file.pack(side="left", fill="x", expand=True, padx=(0, 5))
         tk.Button(frame_file, text="Browse", command=self.browse).pack(side="right")
         
-        # Enable Drag & Drop for Entry
-        self.entry_file.drop_target_register(DND_FILES)
-        self.entry_file.dnd_bind('<<Drop>>', lambda e: self.on_drop(e))
-        self.entry_file.dnd_bind('<<DragEnter>>', lambda e: self.on_drag_enter(e))
-        self.entry_file.dnd_bind('<<DragLeave>>', lambda e: self.on_drag_leave(e))
+        # Enable Drag & Drop for Entry when available
+        if DND_FILES is not None:
+            self.entry_file.drop_target_register(DND_FILES)
+            self.entry_file.dnd_bind('<<Drop>>', lambda e: self.on_drop(e))
+            self.entry_file.dnd_bind('<<DragEnter>>', lambda e: self.on_drag_enter(e))
+            self.entry_file.dnd_bind('<<DragLeave>>', lambda e: self.on_drag_leave(e))
 
         # --- Scan Button ---
         self.scan_btn = tk.Button(self, text="SCAN FILE", command=self.scan, 
-                                  bg="#1565c0", fg="white", font=("Arial", 11, "bold"), pady=10)
+                                  bg="#2e7d32", fg="white", font=("Arial", 11, "bold"), pady=10)
         self.scan_btn.pack(pady=20, fill="x", padx=100)
-
-        # --- Filter Options ---
-        filter_frame = tk.Frame(self)
-        filter_frame.pack(padx=20, pady=5)
-        
-        self.filter_var = tk.BooleanVar(value=True)
-        tk.Checkbutton(filter_frame, text="Show only entries WITHOUT English words", 
-                       variable=self.filter_var, font=("Arial", 9)).pack(side="left")
 
         # --- Results Area ---
         tk.Label(self, text="Scan Results:", font=("Arial", 10)).pack(anchor="w", padx=20)
-        self.result_area = scrolledtext.ScrolledText(self, width=80, height=15, font=("Consolas", 10))
+        self.result_area = scrolledtext.ScrolledText(
+            self,
+            width=80,
+            height=15,
+            font=("Consolas", 10),
+            background="#f8fafc",
+            foreground="#0f172a",
+            insertbackground="#0f172a",
+            borderwidth=1,
+            relief="solid",
+            wrap="none",
+        )
         self.result_area.pack(pady=5, padx=20, fill="both", expand=True)
+
+        self.result_area.tag_config("title", foreground="#0f172a", font=("Arial", 12, "bold"))
+        self.result_area.tag_config("subtitle", foreground="#475569", font=("Arial", 9, "bold"))
+        self.result_area.tag_config("section", foreground="white", background="#1d4ed8", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("summary_label", foreground="#64748b", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("summary_value", foreground="#0f172a", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("entry_header", foreground="#0f172a", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("ok", foreground="#166534", background="#dcfce7", font=("Consolas", 9, "bold"))
+        self.result_area.tag_config("warn", foreground="#7f1d1d", background="#fee2e2", font=("Consolas", 9, "bold"))
+        self.result_area.tag_config("meta", foreground="#475569", font=("Consolas", 9))
+        self.result_area.tag_config("line_text", foreground="#0f172a")
+        self.result_area.tag_config("separator", foreground="#cbd5e1")
 
     def browse(self):
         filename = filedialog.askopenfilename()
@@ -249,6 +423,9 @@ class ScanTab(ttk.Frame):
     def on_drag_leave(self, event):
         """Reset background when drag leaves the entry"""
         self.entry_file.config(bg="white")
+
+    def write_line(self, text="", *tags):
+        self.result_area.insert(tk.END, text + "\n", tags)
 
     def scan(self):
         path = self.entry_file.get()
@@ -276,39 +453,34 @@ class ScanTab(ttk.Frame):
         no_english_count = len(no_english_keys)
         has_english_count = len(english_keys)
 
-        # --- Header Output ---
-        header = f"SCAN SUMMARY:\n"
-        header += f"  - File: {path}\n"
-        header += f"  - Total entries: {total_count}\n"
-        header += f"  - With English letters: {has_english_count}\n"
-        header += f"  - WITHOUT English letters: {no_english_count}\n"
-            
-        header += "=" * 70 + "\n\n"
-        self.result_area.insert(tk.END, header)
+        self.write_line("SUMMARY", "section")
+        self.write_line(f"File: {path}", "summary_label")
+        self.write_line(f"Total entries: {total_count}", "summary_value")
+        self.write_line(f"Passes English check: {has_english_count}", "ok")
+        self.write_line(f"Fails English check: {no_english_count}", "warn")
+        self.write_line("")
 
-        # --- Display Results ---
-        keys_to_show = no_english_keys if self.filter_var.get() else english_keys + no_english_keys
+        # --- Display Results (always only failed entries) ---
+        keys_to_show = no_english_keys
         
         if not keys_to_show:
-            self.result_area.insert(tk.END, ">>> No entries match the current filter.")
+            self.write_line("No entries match the current filter.", "summary_value")
         else:
+            self.write_line("ENTRIES", "section")
             for i, (k, info, reason) in enumerate(keys_to_show, 1):
                 is_eng = k in [x[0] for x in english_keys]
-                
-                entry_text = f"Entry #{i}\n"
-                entry_text += f"Key: {k}\n"
-                entry_text += f"Line {info['line']}\n"
-                
-                # No warning banner shown anymore
+
+                self.write_line(f"Entry #{i}: {k}", "entry_header")
+                self.write_line(f"Line {info['line']}", "meta")
+
                 if is_eng:
-                    entry_text += f"[OK] English detected\n"
+                    self.write_line("[OK] Passes English check", "ok")
                 else:
-                    entry_text += f"[!] No English letters before delimiter\n"
-                
-                entry_text += f"\n{info['text']}\n"
-                entry_text += "-" * 50 + "\n\n"
-                
-                self.result_area.insert(tk.END, entry_text)
+                    self.write_line("[!] Fails English check", "warn")
+
+                self.write_line(f"Reason: {reason}", "meta")
+                self.write_line(info['text'], "line_text")
+                self.write_line("-" * 70, "separator")
             
             self.result_area.yview_moveto(0)
 
@@ -318,10 +490,10 @@ class ScanTab(ttk.Frame):
 class ComparisonApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("ini key comparator")
+        self.root.title("inidiff")
         self.root.geometry("800x650")
 
-        tk.Label(root, text="ini comparator for my sweetie :3", font=("Arial", 14, "bold")).pack(pady=10)
+        tk.Label(root, text="inidiff", font=("Arial", 14, "bold")).pack(pady=10)
 
         # --- Create Notebook (Tabs) ---
         self.notebook = ttk.Notebook(root)
@@ -329,18 +501,18 @@ class ComparisonApp:
 
         # --- Tab 1: Compare ---
         self.compare_tab = CompareTab(self.notebook)
-        self.notebook.add(self.compare_tab, text="📊 Compare Files")
+        self.notebook.add(self.compare_tab, text="Compare Files")
 
         # --- Tab 2: Scan ---
         self.scan_tab = ScanTab(self.notebook)
-        self.notebook.add(self.scan_tab, text="🔍 Scan Language")
+        self.notebook.add(self.scan_tab, text="Check for English")
 
         # Style the tabs
         style = ttk.Style()
         style.configure('TNotebook.Tab', font=('Arial', 10, 'bold'), padding=[20, 5])
 
 if __name__ == "__main__":
-    # Initialize with TkinterDnD.Tk() instead of tk.Tk() to enable DnD
-    root = TkinterDnD.Tk()
+    # Initialize with TkinterDnD.Tk() when available, otherwise fall back to tk.Tk().
+    root = TkinterDnD.Tk() if TkinterDnD is not None else tk.Tk()
     app = ComparisonApp(root)
     root.mainloop()
