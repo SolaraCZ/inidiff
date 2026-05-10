@@ -141,6 +141,72 @@ def get_compare_lines(file_path):
 
     return []
 
+def build_compare_report(path_a, path_b, run_translation_scan=False):
+    lines_a = get_compare_lines(path_a)
+    lines_b = get_compare_lines(path_b)
+    line_count_a = count_lines(path_a)
+    line_count_b = count_lines(path_b)
+
+    if lines_a is None or lines_b is None:
+        return None
+
+    keys_a = {item["key_norm"] for item in lines_a}
+    keys_b = {item["key_norm"] for item in lines_b}
+
+    missing_in_translation = sorted(keys_b - keys_a)
+    extra_in_translation = sorted(keys_a - keys_b)
+    translation_lines = {item["key_norm"]: item for item in lines_a}
+    source_lines = {item["key_norm"]: item for item in lines_b}
+
+    report = {
+        "path_a": path_a,
+        "path_b": path_b,
+        "line_count_a": line_count_a,
+        "line_count_b": line_count_b,
+        "lines_a": lines_a,
+        "lines_b": lines_b,
+        "missing_in_translation": missing_in_translation,
+        "extra_in_translation": extra_in_translation,
+        "translation_lines": translation_lines,
+        "source_lines": source_lines,
+        "translation_scan": None,
+    }
+
+    if run_translation_scan:
+        trans_ok = []
+        trans_fail = []
+        for _, info in translation_lines.items():
+            is_eng, reason = analyze_language(info['text'])
+            if is_eng:
+                trans_ok.append((info, reason))
+            else:
+                trans_fail.append((info, reason))
+
+        report["translation_scan"] = {
+            "ok": trans_ok,
+            "fail": trans_fail,
+        }
+
+    return report
+
+def collect_stringtable_files(folder_path):
+    found = {}
+    for root, _, files in os.walk(folder_path):
+        for name in files:
+            if name.lower() != "stringtable.ini":
+                continue
+
+            full_path = os.path.join(root, name)
+            rel_path = os.path.relpath(full_path, folder_path).replace('\\', '/')
+            rel_lower = rel_path.lower()
+            mods_index = rel_lower.find('mods/')
+            match_key = rel_lower[mods_index:] if mods_index >= 0 else rel_lower
+            found.setdefault(match_key, []).append(full_path)
+
+    for key in found:
+        found[key].sort()
+    return found
+
 # ============================================
 # TAB 1: FILE COMPARATOR
 # ============================================
@@ -260,22 +326,19 @@ class CompareTab(ttk.Frame):
             messagebox.showwarning("Input Error", "Please select both files before comparing.")
             return
 
-        lines_a = get_compare_lines(path_a)
-        lines_b = get_compare_lines(path_b)
-        line_count_a = count_lines(path_a)
-        line_count_b = count_lines(path_b)
-
-        if lines_a is None or lines_b is None:
+        report = build_compare_report(path_a, path_b, self.scan_translation_var.get())
+        if report is None:
             messagebox.showwarning("Input Error", "One or both file paths do not exist.")
             return
 
-        keys_a = {item["key_norm"] for item in lines_a}
-        keys_b = {item["key_norm"] for item in lines_b}
-
-        missing_in_translation = sorted(keys_b - keys_a)
-        extra_in_translation = sorted(keys_a - keys_b)
-        translation_lines = {item["key_norm"]: item for item in lines_a}
-        source_lines = {item["key_norm"]: item for item in lines_b}
+        lines_a = report["lines_a"]
+        lines_b = report["lines_b"]
+        line_count_a = report["line_count_a"]
+        line_count_b = report["line_count_b"]
+        missing_in_translation = report["missing_in_translation"]
+        extra_in_translation = report["extra_in_translation"]
+        translation_lines = report["translation_lines"]
+        source_lines = report["source_lines"]
 
         self.result_area.delete(1.0, tk.END)
 
@@ -314,15 +377,9 @@ class CompareTab(ttk.Frame):
                 self.write_line("None", "summary_value")
 
         # If enabled, run the English-check on the translation (File A) and include results
-        if getattr(self, 'scan_translation_var', None) and self.scan_translation_var.get():
-            trans_ok = []
-            trans_fail = []
-            for k, info in translation_lines.items():
-                is_eng, reason = analyze_language(info['text'])
-                if is_eng:
-                    trans_ok.append((k, info, reason))
-                else:
-                    trans_fail.append((k, info, reason))
+        if report["translation_scan"] is not None:
+            trans_ok = report["translation_scan"]["ok"]
+            trans_fail = report["translation_scan"]["fail"]
 
             self.write_line("")
             self.write_line("TRANSLATION ENGLISH CHECK", "section")
@@ -332,7 +389,7 @@ class CompareTab(ttk.Frame):
             self.write_line("")
 
             if trans_fail:
-                for i, (k, info, reason) in enumerate(trans_fail, 1):
+                for i, (info, reason) in enumerate(trans_fail, 1):
                     self.write_line(f"{i}. File A line {info['line']}: {info['key']}", "line_num_a")
                     self.write_line(f"[!] Fails English check: {reason}", "warn")
                     self.write_line(info['text'], "line_text")
@@ -485,6 +542,209 @@ class ScanTab(ttk.Frame):
             self.result_area.yview_moveto(0)
 
 # ============================================
+# TAB 3: FOLDER COMPARATOR
+# ============================================
+class FolderCompareTab(ttk.Frame):
+    def __init__(self, parent):
+        super().__init__(parent)
+
+        tk.Label(self, text="Compare Folder A vs Folder B", font=("Arial", 14, "bold")).pack(pady=10)
+        tk.Label(
+            self,
+            text="Folder A is translation. Matches are made for stringtable.ini files by normalized path (from Mods/ onward).",
+            font=("Arial", 9),
+            fg="gray"
+        ).pack(pady=5)
+
+        tk.Label(self, text="Folder A (Translation):", font=("Arial", 10, "bold")).pack(anchor="w", padx=20)
+        frame_a = tk.Frame(self)
+        frame_a.pack(fill="x", padx=20, pady=5)
+        self.entry_folder_a = tk.Entry(frame_a, font=("Consolas", 9))
+        self.entry_folder_a.pack(side="left", fill="x", expand=True, padx=(0, 5))
+        tk.Button(frame_a, text="Browse", command=lambda: self.browse_folder(self.entry_folder_a)).pack(side="right")
+
+        if DND_FILES is not None:
+            self.entry_folder_a.drop_target_register(DND_FILES)
+            self.entry_folder_a.dnd_bind('<<Drop>>', lambda e: self.on_drop_folder(e, self.entry_folder_a))
+            self.entry_folder_a.dnd_bind('<<DragEnter>>', lambda e: self.on_drag_enter_folder(e, self.entry_folder_a))
+            self.entry_folder_a.dnd_bind('<<DragLeave>>', lambda e: self.on_drag_leave_folder(e, self.entry_folder_a))
+
+        tk.Label(self, text="Folder B (Modpack):", font=("Arial", 10, "bold")).pack(anchor="w", padx=20, pady=(10, 0))
+        frame_b = tk.Frame(self)
+        frame_b.pack(fill="x", padx=20, pady=5)
+        self.entry_folder_b = tk.Entry(frame_b, font=("Consolas", 9))
+        self.entry_folder_b.pack(side="left", fill="x", expand=True, padx=(0, 5))
+        tk.Button(frame_b, text="Browse", command=lambda: self.browse_folder(self.entry_folder_b)).pack(side="right")
+
+        if DND_FILES is not None:
+            self.entry_folder_b.drop_target_register(DND_FILES)
+            self.entry_folder_b.dnd_bind('<<Drop>>', lambda e: self.on_drop_folder(e, self.entry_folder_b))
+            self.entry_folder_b.dnd_bind('<<DragEnter>>', lambda e: self.on_drag_enter_folder(e, self.entry_folder_b))
+            self.entry_folder_b.dnd_bind('<<DragLeave>>', lambda e: self.on_drag_leave_folder(e, self.entry_folder_b))
+
+        self.compare_btn = tk.Button(
+            self,
+            text="COMPARE FOLDERS",
+            command=self.compare_folders,
+            bg="#2e7d32",
+            fg="white",
+            font=("Arial", 11, "bold"),
+            pady=10
+        )
+        self.compare_btn.pack(pady=20, fill="x", padx=100)
+
+        tk.Label(self, text="Folder compare results:", font=("Arial", 10)).pack(anchor="w", padx=20)
+        self.result_area = scrolledtext.ScrolledText(
+            self,
+            width=80,
+            height=15,
+            font=("Consolas", 10),
+            background="#f8fafc",
+            foreground="#0f172a",
+            insertbackground="#0f172a",
+            borderwidth=1,
+            relief="solid",
+            wrap="none",
+        )
+        self.result_area.pack(pady=5, padx=20, fill="both", expand=True)
+
+        self.result_area.tag_config("section", foreground="white", background="#1d4ed8", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("summary_label", foreground="#64748b", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("summary_value", foreground="#0f172a", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("line_num_a", foreground="#b91c1c", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("line_num_b", foreground="#166534", font=("Consolas", 10, "bold"))
+        self.result_area.tag_config("warn", foreground="#7f1d1d", background="#fee2e2", font=("Consolas", 9, "bold"))
+        self.result_area.tag_config("ok", foreground="#166534", background="#dcfce7", font=("Consolas", 9, "bold"))
+        self.result_area.tag_config("line_text", foreground="#0f172a")
+        self.result_area.tag_config("separator", foreground="#cbd5e1")
+
+    def browse_folder(self, entry_widget):
+        folder = filedialog.askdirectory()
+        if folder:
+            entry_widget.delete(0, tk.END)
+            entry_widget.insert(0, folder)
+
+    def on_drop_folder(self, event, entry_widget):
+        path = event.data
+
+        # TkDnD can wrap paths that contain spaces with braces.
+        if path.startswith('{') and path.endswith('}'):
+            path = path[1:-1]
+
+        path = path.strip()
+        if os.path.isfile(path):
+            path = os.path.dirname(path)
+
+        entry_widget.delete(0, tk.END)
+        entry_widget.insert(0, path)
+        entry_widget.config(bg="white")
+
+    def on_drag_enter_folder(self, event, entry_widget):
+        entry_widget.config(bg="#e3f2fd")
+
+    def on_drag_leave_folder(self, event, entry_widget):
+        entry_widget.config(bg="white")
+
+    def write_line(self, text="", *tags):
+        self.result_area.insert(tk.END, text + "\n", tags)
+
+    def compare_folders(self):
+        folder_a = self.entry_folder_a.get().strip()
+        folder_b = self.entry_folder_b.get().strip()
+
+        if not folder_a or not folder_b:
+            messagebox.showwarning("Input Error", "Please select both folders before comparing.")
+            return
+
+        if not os.path.isdir(folder_a) or not os.path.isdir(folder_b):
+            messagebox.showwarning("Input Error", "One or both folder paths do not exist.")
+            return
+
+        files_a = collect_stringtable_files(folder_a)
+        files_b = collect_stringtable_files(folder_b)
+
+        pair_items = []
+        unmatched_a = []
+        unmatched_b = []
+
+        common_keys = sorted(set(files_a.keys()) & set(files_b.keys()))
+        for key in common_keys:
+            a_list = files_a[key]
+            b_list = files_b[key]
+            pair_count = min(len(a_list), len(b_list))
+
+            for i in range(pair_count):
+                pair_items.append((key, a_list[i], b_list[i]))
+
+            if len(a_list) > pair_count:
+                unmatched_a.extend((key, p) for p in a_list[pair_count:])
+            if len(b_list) > pair_count:
+                unmatched_b.extend((key, p) for p in b_list[pair_count:])
+
+        only_a = sorted(set(files_a.keys()) - set(files_b.keys()))
+        for key in only_a:
+            unmatched_a.extend((key, p) for p in files_a[key])
+
+        only_b = sorted(set(files_b.keys()) - set(files_a.keys()))
+        for key in only_b:
+            unmatched_b.extend((key, p) for p in files_b[key])
+
+        self.result_area.delete(1.0, tk.END)
+        self.write_line("SUMMARY", "section")
+        self.write_line(f"Folder A stringtable.ini files: {sum(len(v) for v in files_a.values())}", "summary_label")
+        self.write_line(f"Folder B stringtable.ini files: {sum(len(v) for v in files_b.values())}", "summary_label")
+        self.write_line(f"Matched pairs: {len(pair_items)}", "summary_value")
+        self.write_line(f"Unmatched in Folder A: {len(unmatched_a)}", "summary_value")
+        self.write_line(f"Unmatched in Folder B: {len(unmatched_b)}", "summary_value")
+        self.write_line("")
+
+        if unmatched_a or unmatched_b:
+            self.write_line("UNMATCHED FILES", "section")
+            if unmatched_a:
+                self.write_line("In Folder A only:", "line_num_a")
+                for key, full_path in unmatched_a:
+                    self.write_line(f"- {key} -> {full_path}", "line_text")
+            if unmatched_b:
+                self.write_line("In Folder B only:", "line_num_b")
+                for key, full_path in unmatched_b:
+                    self.write_line(f"- {key} -> {full_path}", "line_text")
+            self.write_line("")
+
+        if not pair_items:
+            self.write_line("No matching stringtable.ini files were found.", "summary_value")
+            self.result_area.yview_moveto(0)
+            return
+
+        self.write_line("PAIR RESULTS", "section")
+        for pair_index, (key, path_a, path_b) in enumerate(pair_items, 1):
+            report = build_compare_report(path_a, path_b, run_translation_scan=True)
+            if report is None:
+                self.write_line(f"{pair_index}. {key}", "warn")
+                self.write_line("Could not read one or both files.", "warn")
+                self.write_line("-" * 70, "separator")
+                continue
+
+            missing_count = len(report["missing_in_translation"])
+            extra_count = len(report["extra_in_translation"])
+            scan_info = report["translation_scan"] or {"ok": [], "fail": []}
+
+            self.write_line(f"{pair_index}. {key}", "summary_value")
+            self.write_line(f"File A: {path_a}", "line_num_a")
+            self.write_line(f"File B: {path_b}", "line_num_b")
+            self.write_line(
+                f"Missing keys: {missing_count} | Extra keys: {extra_count} | Translation English fails: {len(scan_info['fail'])}",
+                "summary_label"
+            )
+
+            if scan_info["fail"]:
+                for i, (info, reason) in enumerate(scan_info["fail"], 1):
+                    self.write_line(f"  [A fail {i}] line {info['line']}: {info['key']} -> {reason}", "warn")
+
+            self.write_line("-" * 70, "separator")
+
+        self.result_area.yview_moveto(0)
+
+# ============================================
 # MAIN APP WITH TABS
 # ============================================
 class ComparisonApp:
@@ -506,6 +766,10 @@ class ComparisonApp:
         # --- Tab 2: Scan ---
         self.scan_tab = ScanTab(self.notebook)
         self.notebook.add(self.scan_tab, text="Check for English")
+
+        # --- Tab 3: Folder Compare ---
+        self.folder_compare_tab = FolderCompareTab(self.notebook)
+        self.notebook.add(self.folder_compare_tab, text="Folder Compare")
 
         # Style the tabs
         style = ttk.Style()
