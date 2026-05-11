@@ -3,14 +3,14 @@ name: Build Windows EXE
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:   # lets you run it manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -21,14 +21,19 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pyinstaller
-          pip install tkinterdnd2   # your optional drag-and-drop library
+          pip install tkinterdnd2
 
       - name: Build EXE
         run: |
           pyinstaller --onefile --windowed --name inidiff inidiff.py
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Update nightly release
+        uses: softprops/action-gh-release@v2
         with:
-          name: inidiff-exe
-          path: dist/inidiff.exe
+          tag_name: nightly
+          name: Nightly Build
+          body: |
+            This release is automatically updated with every push to `main`.
+            It contains the latest development version of inidiff.
+          prerelease: true
+          files: dist/inidiff.exe
