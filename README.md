@@ -18,12 +18,22 @@ inidiff is a desktop tool for comparing and validating stringtable.ini translati
 
 ## Installation
 
-### Clone the repository
+**Two ways to run inidiff – pick what suits you.**
+
+### Option 1: Download the pre-built EXE
+
+1. Grab the latest `inidiff.exe` from the [nightly release](https://github.com/SolaraCZ/inidiff/releases/latest/download/inidiff.exe)
+2. Run it.  
+   *(Windows SmartScreen might warn – click “More info” → “Run anyway”)*
+
+
+### Option 2: Run form source
+#### 1. Clone the repository
 ```bash
 git clone https://github.com/SolaraCZ/inidiff.git
 cd inidiff
 ```
-### Install dependencies
+#### 2. Install dependencies
 - Python **3.8 or newer** – [Download from python.org](https://www.python.org/downloads/)
 
 The core tool only needs **Python 3.8+ with Tkinter** (usually included).
@@ -35,7 +45,7 @@ Note: On some Linux distributions you may need to install **python3-tk** separat
 ```bash
 sudo apt install python3-tk
 ```
-### Run the application
+#### 3. Run the application
 ```bash
 python inidiff.py
 ```
