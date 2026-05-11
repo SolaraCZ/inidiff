@@ -2,8 +2,8 @@
 
 inidiff is a desktop tool for comparing and validating stringtable.ini translation files. It helps mod translators ensure their translations are complete and consistent. It was made for translating the videogame series Gothic, but is usable elsewhere too.
 
-https://img.shields.io/badge/Python-3.8+-blue.svg
-https://img.shields.io/badge/platform-Windows%2520%257C%2520Linux%2520%257C%2520macOS-lightgrey
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
 ## Features
 - **Compare two files** – spot missing and extra keys between a translation (File A) and a reference (File B).
     - You may also use English content scanner for your translation at the same time.
