@@ -29,13 +29,6 @@ jobs:
         run: |
           pyinstaller --onefile --windowed --name inidiff inidiff.py
 
-      - name: Package source code
-        shell: powershell
-        run: |
-          New-Item -ItemType Directory -Force release-artifacts | Out-Null
-          $sourceItems = Get-ChildItem -Force | Where-Object { $_.Name -notin @('.git', 'dist', 'build', 'release-artifacts') }
-          Compress-Archive -Path $sourceItems.FullName -DestinationPath release-artifacts/inidiff-source.zip -Force
-
       - name: Update nightly release
         uses: softprops/action-gh-release@v2
         with:
@@ -47,4 +40,4 @@ jobs:
           prerelease: true
           files: |
             dist/inidiff.exe
-            release-artifacts/inidiff-source.zip
+            inidiff.py
