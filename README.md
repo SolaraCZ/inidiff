@@ -22,7 +22,7 @@ inidiff is a desktop tool for comparing and validating stringtable.ini translati
 
 ### Option 1: Download the pre-built EXE
 
-1. Grab the latest `inidiff.exe` from the [nightly release](https://github.com/SolaraCZ/inidiff/releases/latest/download/inidiff.exe)
+1. Grab the latest `inidiff.exe` from the [nightly release](https://github.com/SolaraCZ/inidiff/releases/tag/nightly)
 2. Run it.  
    *(Windows SmartScreen might warn – click “More info” → “Run anyway”)*
 
