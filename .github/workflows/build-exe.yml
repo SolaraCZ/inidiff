@@ -62,6 +62,7 @@ jobs:
             This release is automatically updated with every push to `main`.
             It contains the latest development version of inidiff.
           prerelease: true
+          generate_release_notes: false
           files: |
             dist/inidiff.exe
             inidiff.py
