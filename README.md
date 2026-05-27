@@ -114,4 +114,4 @@ Pull requests are welcome! Please open an issue first to discuss any major chang
 
 ## License
 
-[MIT](https://github.com/SolaraCZ/inidiff/blob/main/LICENSE)
+[GNU General Public License v3.0](https://github.com/SolaraCZ/inidiff/blob/main/LICENSE)
