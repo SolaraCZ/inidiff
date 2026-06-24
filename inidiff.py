@@ -207,9 +207,8 @@ def collect_stringtable_files(folder_path):
         found[key].sort()
     return found
 
-# ============================================
+
 # TAB 1: FILE COMPARATOR
-# ============================================
 class CompareTab(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
@@ -399,9 +398,7 @@ class CompareTab(ttk.Frame):
 
         self.result_area.yview_moveto(0)
 
-# ============================================
 # TAB 2: LANGUAGE SCANNER
-# ============================================
 class ScanTab(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
@@ -541,9 +538,7 @@ class ScanTab(ttk.Frame):
             
             self.result_area.yview_moveto(0)
 
-# ============================================
 # TAB 3: FOLDER COMPARATOR
-# ============================================
 class FolderCompareTab(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
@@ -744,9 +739,8 @@ class FolderCompareTab(ttk.Frame):
 
         self.result_area.yview_moveto(0)
 
-# ============================================
 # MAIN APP WITH TABS
-# ============================================
+
 class ComparisonApp:
     def __init__(self, root):
         self.root = root
